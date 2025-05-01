@@ -1,21 +1,20 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Music from './components/Music';
-import Tour from './components/Tour';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import LanguageSwitch from './components/LanguageSwitch';
-import { LanguageProvider } from './contexts/LanguageContext';
+import React from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Music from "./components/Music";
+import Tour from "./components/Tour";
+import About from "./components/About";
+import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
         <Header />
-        <LanguageSwitch />
+        {/* <LanguageSwitch /> */}
         <main>
           <Hero />
           <Music />
