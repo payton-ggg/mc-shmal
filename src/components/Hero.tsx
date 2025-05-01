@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
             }`}
           >
             <span className="block transform -rotate-2">Timofii Shmalko</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 transform rotate-2 translate-x-4">MC SHMAL</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 transform rotate-2 translate-x-4">МС Шмаль</span>
           </h1>
           
           <p 
