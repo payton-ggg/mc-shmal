@@ -30,7 +30,7 @@ const About: React.FC = () => {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
           }`}>
             <img 
-              src="../public/photo_2025-05-01_15-00-46.jpg" 
+              src="/photo_2025-05-01_15-00-46.jpg" 
               alt="MC Shmal performing" 
               className="w-full h-full object-cover"
             />
