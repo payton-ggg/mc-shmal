@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <a href="#" className="hover:text-pink-500 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-pink-500 transition-colors">Terms of Service</a>
             <div className="flex items-center mt-2 md:mt-0">
-              Made with <Heart size={14} className="text-pink-500 mx-1" fill="#ec4899" /> by StackBlitz
+              Made with <Heart size={14} className="text-pink-500 mx-1" fill="#ec4899" /> by OnThePlaton
             </div>
           </div>
         </div>

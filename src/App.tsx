@@ -20,7 +20,7 @@ function App() {
           <Music />
           <Tour />
           <About />
-          <Gallery />
+          {/* <Gallery /> */}
           <Contact />
         </main>
         <Footer />

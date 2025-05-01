@@ -151,17 +151,30 @@ const Music: React.FC = () => {
             <div className="mt-8 relative">
               <h3 className="text-xl font-semibold mb-4 text-gray-300 transform -rotate-2">Listen On</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Spotify', 'Apple Music', 'SoundCloud', 'YouTube'].map((platform, index) => (
                   <a 
-                    key={platform}
-                    href="#" 
-                    className={`flex items-center justify-center py-3 px-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform ${
-                      index % 2 === 0 ? 'hover:rotate-3' : 'hover:-rotate-3'
-                    } hover:scale-105`}
+                    href="https://open.spotify.com/artist/6zlh02k4g8OMWfEYqPRp3N"
+                    className={`flex items-center justify-center py-3 px-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:-rotate-3 hover:scale-105`}
                   >
-                    {platform}
+                    Spotify
                   </a>
-                ))}
+                  <a 
+                    href="https://music.apple.com/ua/artist/timofey-shmalko/1802651752"
+                    className={`flex items-center justify-center py-3 px-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:rotate-3 hover:scale-105`}
+                  >
+                    Apple Music
+                  </a>
+                  <a 
+                    href="https://soundcloud.com/timofey-shmalko"
+                    className={`flex items-center justify-center py-3 px-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:-rotate-3 hover:scale-105`}
+                  >
+                    SoundCloud
+                  </a>
+                  <a 
+                    href="https://music.youtube.com/channel/UCfeH9ieb9SyQNGZVNvsOh2A"
+                    className={`flex items-center justify-center py-3 px-4 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 transform hover:rotate-3 hover:scale-105`}
+                  >
+                    Youtube Music
+                  </a>
               </div>
             </div>
           </div>

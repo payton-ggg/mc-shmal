@@ -55,11 +55,11 @@ const Hero: React.FC = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <button className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 transform hover:scale-105 hover:-rotate-2">
+            <button className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 transform hover:scale-105 hover:-rotate-2" onClick={() => window.open("https://soundcloud.com/timofey-shmalko/lil-shmal")}>
               <Play size={18} className="mr-2" />
               Latest Release
             </button>
-            <button className="bg-transparent border-2 border-white hover:border-pink-500 text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 transform hover:scale-105 hover:rotate-2 hover:text-pink-500">
+            <button className="bg-transparent border-2 border-white hover:border-pink-500 text-white font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 transform hover:scale-105 hover:rotate-2 hover:text-pink-500" onClick={() => window.open("https://soundcloud.com/timofey-shmalko")}>
               <Volume2 size={18} className="mr-2" />
               Listen Now
             </button>
