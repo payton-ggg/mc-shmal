@@ -1,66 +1,93 @@
-import React, { useRef, useState } from 'react';
-import { Mail, Send, MapPin, Phone, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import React, { useRef, useState } from "react";
+import {
+  Mail,
+  Send,
+  MapPin,
+  Phone,
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const Contact: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref, { threshold: 0.1 });
-  
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Form submission logic would go here
     console.log(formData);
-    alert('Thanks for your message! We\'ll be in touch soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    alert("Thanks for your message! We'll be in touch soon.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const socialLinks = [
-    { icon: <Instagram size={20} />, label: 'Instagram', url: '#' },
-    { icon: <Twitter size={20} />, label: 'Twitter', url: '#' },
-    { icon: <Facebook size={20} />, label: 'Facebook', url: '#' },
-    { icon: <Youtube size={20} />, label: 'YouTube', url: '#' }
+    { icon: <Instagram size={20} />, label: "Instagram", url: "#" },
+    { icon: <Twitter size={20} />, label: "Twitter", url: "#" },
+    { icon: <Facebook size={20} />, label: "Facebook", url: "#" },
+    { icon: <Youtube size={20} />, label: "YouTube", url: "#" },
   ];
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       ref={ref}
       className="py-20 bg-gradient-to-b from-gray-900 to-black"
     >
       <div className="container mx-auto px-4">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Get In</span> Touch
+        <h2
+          className={`text-3xl md:text-4xl font-bold mb-16 text-center transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
+            Get In
+          </span>{" "}
+          Touch
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className={`transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <div
+            className={`transition-all duration-700 delay-300 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8">
               <h3 className="text-xl font-semibold mb-6 flex items-center">
                 <Mail size={20} className="text-pink-500 mr-2" />
                 Send a Message
               </h3>
-              
+
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-400 mb-1"
+                    >
+                      Your Name
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -72,9 +99,14 @@ const Contact: React.FC = () => {
                       placeholder="John Doe"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Your Email</label>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-400 mb-1"
+                    >
+                      Your Email
+                    </label>
                     <input
                       type="email"
                       id="email"
@@ -87,9 +119,14 @@ const Contact: React.FC = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="mb-4">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-1">Subject</label>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-400 mb-1"
+                  >
+                    Subject
+                  </label>
                   <select
                     id="subject"
                     name="subject"
@@ -105,9 +142,14 @@ const Contact: React.FC = () => {
                     <option value="Other">Other</option>
                   </select>
                 </div>
-                
+
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Your Message</label>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-400 mb-1"
+                  >
+                    Your Message
+                  </label>
                   <textarea
                     id="message"
                     name="message"
@@ -119,9 +161,9 @@ const Contact: React.FC = () => {
                     placeholder="Your message..."
                   ></textarea>
                 </div>
-                
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   className="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300"
                 >
                   Send Message
@@ -130,14 +172,20 @@ const Contact: React.FC = () => {
               </form>
             </div>
           </div>
-          
+
           {/* Contact Info */}
-          <div className={`transition-all duration-700 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <div
+            className={`transition-all duration-700 delay-500 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 mb-8">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
-              
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
+
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin size={20} className="text-pink-500 mr-3 mt-1" />
@@ -147,32 +195,42 @@ const Contact: React.FC = () => {
                     <p className="text-gray-400">Los Angeles, CA 90001</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-center">
                   <Mail size={20} className="text-pink-500 mr-3" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:booking@mcshmal.com" className="text-gray-400 hover:text-pink-500 transition-colors">booking@mcshmal.com</a>
+                    <a
+                      href="mailto:booking@mcshmal.com"
+                      className="text-gray-400 hover:text-pink-500 transition-colors"
+                    >
+                      booking@mcshmal.com
+                    </a>
                   </div>
                 </li>
-                
+
                 <li className="flex items-center">
                   <Phone size={20} className="text-pink-500 mr-3" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="tel:+1234567890" className="text-gray-400 hover:text-pink-500 transition-colors">+1 (234) 567-890</a>
+                    <a
+                      href="tel:+1234567890"
+                      className="text-gray-400 hover:text-pink-500 transition-colors"
+                    >
+                      +1 (234) 567-890
+                    </a>
                   </div>
                 </li>
               </ul>
             </div>
-            
+
             {/* Social Links */}
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8">
               <h3 className="text-xl font-semibold mb-6">Follow MC Shmal</h3>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={social.url}
                     className="flex items-center py-3 px-4 bg-gray-700/50 rounded-lg hover:bg-pink-500/20 hover:border-pink-500 border border-gray-700 transition-all duration-300"
@@ -182,11 +240,16 @@ const Contact: React.FC = () => {
                   </a>
                 ))}
               </div>
-              
+
               <div className="mt-8 p-4 bg-gray-700/30 rounded-lg text-center">
                 <p className="text-gray-300 text-sm">
-                  For press inquiries, please contact our PR team at 
-                  <a href="mailto:press@mcshmal.com" className="text-pink-500 hover:underline ml-1">press@mcshmal.com</a>
+                  For press inquiries, please contact our PR team at
+                  <a
+                    href="mailto:press@mcshmal.com"
+                    className="text-pink-500 hover:underline ml-1"
+                  >
+                    press@mcshmal.com
+                  </a>
                 </p>
               </div>
             </div>

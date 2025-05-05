@@ -1,10 +1,8 @@
-import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Music from "./components/Music";
 import Tour from "./components/Tour";
 import About from "./components/About";
-import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { LanguageProvider } from "./contexts/LanguageContext";
