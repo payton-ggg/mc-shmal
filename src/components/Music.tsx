@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Play, ExternalLink, Heart, Share2 } from "lucide-react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
